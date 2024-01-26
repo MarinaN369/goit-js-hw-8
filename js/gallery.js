@@ -63,9 +63,9 @@ const images = [
     description: "Lighthouse Coast Sea",
   },
 ];
-const container = document.querySelector('.gallery')
+const gallery = document.querySelector('.gallery')
 
-function galleryTemplate(images) {
+function galleryRoutine(images) {
   const result = images.map((image) => {
     return `<li class="gallery-item">
   <a class="gallery-link" href="${image.original}">
@@ -79,15 +79,15 @@ function galleryTemplate(images) {
   </a>
 </li>`
   }).join("\n\n");
-  container.innerHTML = result;
+  gallery.innerHTML = result;
 }
 
-galleryTemplate(images);
+galleryRoutine(images);
 
 
 
 
-container.addEventListener("click", event => {
+gallery.addEventListener("click", event => {
     event.preventDefault();
   if (event.target === event.currentTarget) return;
     const liElem = event.target;
